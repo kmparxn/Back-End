@@ -10,4 +10,4 @@
 
 # Demo
 
-![Captura de pantalla (871)](https://user-images.githubusercontent.com/42001590/206298664-7bc204c7-3d6c-41d6-a3e1-41554ae9ede9.png)
+![Captura de pantalla (983)](https://user-images.githubusercontent.com/42001590/216455204-f6b4e799-4db2-471e-ad35-7b7bd73831eb.png)
