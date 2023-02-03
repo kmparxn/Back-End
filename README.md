@@ -6,10 +6,10 @@
 
 Principales tecnologias para el proyecto users:
 
-* **Angular:** 
-* **Angular Material** 
-* **The RxJS library**
-* **SCSS** 
+* **C#** 
+* **Asp.Net Core Web Api** 
+* **SQL Server**
+* **Doker** 
 
 ## Arquitectura
 
