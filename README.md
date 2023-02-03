@@ -46,5 +46,5 @@ Ventajas del patrón de repositorio:
 
 # Demo
 
-![Captura de pantalla (983)](https://user-images.githubusercontent.com/42001590/216455204-f6b4e799-4db2-471e-ad35-7b7bd73831eb.png)
+![Captura de pantalla (985)](https://user-images.githubusercontent.com/42001590/216730710-6efac03e-4afc-42cf-bf38-479752e27276.png)
 
