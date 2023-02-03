@@ -9,7 +9,7 @@ Principales tecnologias para el proyecto users:
 * **C#** 
 * **Asp.Net Core Web Api** 
 * **SQL Server**
-* **Doker** 
+* **Docker** 
 
 ## Arquitectura
 
