@@ -40,8 +40,9 @@ Ventajas del patrón de repositorio:
 * **Etapa2:** Creacion del proyecto y instalacion de las diferentes librerias y dependencias, configuracion del proyecto.
 * **Etapa3:** Creacion y configuracion de Base de Datos, Modelos, Migraciones, Interfaces, Repositorios, Controladores y demás componentes.
 * **Etapa4:** Pruebas Unitarias
-* **Etapa5:** Integracion con el Front-End
-* **Etapa6:** Despliegue del proyecto.
+* **Etapa5:** Configuracion Docker
+* **Etapa6:** Integracion con el Front-End
+* **Etapa7:** Despliegue del proyecto.
 
 # Demo
 
