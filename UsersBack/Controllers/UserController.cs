@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UsersBack.Data;
 using UsersBack.Dto;
+using UsersBack.Helpers;
 using UsersBack.Interfaces;
 using UsersBack.Models;
+using UsersBack.Wrappers;
 
 namespace UsersBack.Controllers
 {
@@ -19,20 +21,23 @@ namespace UsersBack.Controllers
             _userReposiroty = userReposiroty;
         }
 
-        // GET: api/TodoItems
+        // GET: api/User
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers([FromQuery] PaginationFilter paginationFilter)
         {
-            var users = await _userReposiroty.GetAll();
+            var validFilter = new PaginationFilter(paginationFilter.PageNumber, paginationFilter.PageSize);
+            var users = await _userReposiroty.GetAll(validFilter);
+
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            return Ok(users.Select(x => ItemToDTO(x)));
+            return Ok(new PagedResponse<IEnumerable<User>>(users, validFilter.PageNumber, validFilter.PageSize));
+            //return Ok(users.Select(x => ItemToDTO(x)));
             
         }
 
-        // GET: api/TodoItems/5
+        // GET: api/User/5
         // <snippet_GetByID>
         [HttpGet("{id}")]
         public async Task<ActionResult<UserDto>> GetTodoItem(long id)
@@ -49,7 +54,7 @@ namespace UsersBack.Controllers
 
         // </snippet_GetByID>
 
-        // PUT: api/TodoItems/5
+        // PUT: api/User/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         // <snippet_Update>
         [HttpPut("{id}")]
@@ -85,7 +90,7 @@ namespace UsersBack.Controllers
             return NoContent();
         }
 
-        // POST: api/TodoItems
+        // POST: api/User
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         // <snippet_Create>
         [HttpPost]
@@ -114,7 +119,7 @@ namespace UsersBack.Controllers
         }
         // </snippet_Create>
 
-        // DELETE: api/TodoItems/5
+        // DELETE: api/User/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {

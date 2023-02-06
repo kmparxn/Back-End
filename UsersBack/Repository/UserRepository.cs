@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using UsersBack.Data;
+using UsersBack.Helpers;
 using UsersBack.Interfaces;
 using UsersBack.Models;
 
@@ -28,11 +29,11 @@ namespace UsersBack.Repository
             return Save();
         }
 
-        public async Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<User>> GetAll(PaginationFilter paginationFilter)
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users.Skip((paginationFilter.PageNumber - 1) * paginationFilter.PageSize)
+                .Take(paginationFilter.PageSize).ToListAsync();
         }
-
 
         public async Task<User> GetByIdAsync(long id)
         {
