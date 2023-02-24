@@ -1,7 +1,5 @@
 # [Asp.Net Core - Back-End](https://demo-two-psi.vercel.app/dashboard) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) 
 
-### Reto Tecnico - FullStack - TEvolvers [(Demo)](https://demo-two-psi.vercel.app/dashboard) 
-
 ## Stack Tecnologico
 
 Principales tecnologias para el proyecto users:
